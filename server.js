@@ -22,7 +22,7 @@ app.use(function(req, res, next) {
 });
 
 const attractionRouter = require('./routes/attractionsRoutes')
-app.use('/attractions', attractionRouter)
+app.use('/api/attractions', attractionRouter)
 
 if (process.env.NODE_ENV === "production"){
   app.use(express.static('client/build'))

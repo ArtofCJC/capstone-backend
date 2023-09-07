@@ -8,11 +8,11 @@ router.route('/').get((req, res) => {
     .then(attractions => res.json(attractions))
     .catch(err => res.statusMessage(400).json('Error: ' + err));
 });
-router.route('/add').post((req, res) => {
+router.route('/').post((req, res) => {
     const title = req.body.title;
     const info = req.body.info;
     const location = req.body.location;
-    const image = req.body.imageURL;
+    const image = req.body.image;
     const newAttraction = new Attraction({title, info, location, image});
     newAttraction.save()
     .then(() => res.json('Attraction added!'))
