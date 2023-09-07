@@ -6,7 +6,7 @@ const Attraction = require('../models/attractions')
 router.route('/').get((req, res) => {
     Attraction.find()
     .then(attractions => res.json(attractions))
-    .catch(err => res.statusMessage(400).json('Error: ' + err));
+    .catch(err => res.status(400).json('Error: ' + err));
 });
 router.route('/').post((req, res) => {
     const title = req.body.title;
