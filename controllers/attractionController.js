@@ -9,7 +9,7 @@ const getAttractions = async (req, res) => {
     res.status(200).json(attractions)
 }
 
-//get single worout
+//get a single attraction
 const getAttraction = async (req, res) => {
     const { id } = req.params
 

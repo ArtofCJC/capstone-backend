@@ -6,8 +6,8 @@ require('dotenv').config();
 const app = express();
 const port = process.env.PORT || 4000;
 
-app.use(express.json());
 app.use(cors())
+app.use(express.json());
 
 const uri = process.env.MONGO_URI;
 
@@ -19,10 +19,7 @@ connection.once('open', () => {
   console.log("MongoDB is connected");
 })
 
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  next();
-});
+
 
 const attractionRouter = require('./routes/attractionsRoutes')
 app.use('/api/attractions', attractionRouter)
